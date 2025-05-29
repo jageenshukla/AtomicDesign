@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct SongListView: View {
+    @EnvironmentObject var themeManager: ThemeManager
     @State private var searchText = ""
 
     var filteredSongs: [Song] {
@@ -13,13 +14,17 @@ struct SongListView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 0) { // Remove spacing between elements
                 SearchBar(searchText: $searchText)
+                    .environmentObject(themeManager)
                 List(filteredSongs, id: \ .name) { song in
                     SongCell(song: song)
+                        .environmentObject(themeManager)
+                        .listRowBackground(themeManager.currentTheme.colors.background) // Dynamically set row background color
                 }
-                .listStyle(PlainListStyle())
+                .listStyle(.plain) // Remove default list margins
             }
+            .background(themeManager.currentTheme.colors.background.ignoresSafeArea())
             .navigationTitle("Songs")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

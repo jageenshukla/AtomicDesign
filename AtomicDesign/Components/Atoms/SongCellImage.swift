@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct SongCellImage: View {
+    @EnvironmentObject var themeManager: ThemeManager
     let letter: String
 
     var body: some View {
@@ -8,7 +9,7 @@ struct SongCellImage: View {
             .font(.title)
             .foregroundColor(.white)
             .frame(width: 50, height: 50)
-            .background(Color.blue)
+            .background(themeManager.currentTheme.colors.primary)
             .clipShape(Circle())
     }
 }
