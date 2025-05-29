@@ -9,17 +9,18 @@ import SwiftUI
 
 struct LoginButton: View {
     @EnvironmentObject var themeManager: ThemeManager
+    @Environment(\.colorScheme) private var colorScheme
     let title: String
     let action: () -> Void
-    
+
     var body: some View {
         Button(action: action) {
             Text(title)
                 .font(themeManager.currentTheme.fonts.body)
                 .foregroundColor(.white)
-                .padding()
+                .padding()  
                 .frame(maxWidth: .infinity)
-                .background(Theme.Colors.LoginButton.background)
+                .background(themeManager.currentTheme.colors.buttonBackground)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
         }
     }

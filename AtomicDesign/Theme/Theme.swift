@@ -11,8 +11,10 @@ struct Theme {
     struct Colors {
         let background: Color
         let text: Color
+        let buttonBackground: Color
+        let loginButtonBackground: Color
     }
-    
+
     let colors: Colors
     let fonts: Fonts
 }

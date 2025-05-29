@@ -10,15 +10,15 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var themeManager: ThemeManager
     @Environment(\.colorScheme) private var colorScheme
-    
+
     var body: some View {
         ZStack {
             themeManager.currentTheme.colors.background
                 .ignoresSafeArea()
-            
+
             VStack {
                 LoginForm()
-                
+
                 Button(action: {
                     // Toggle between dark mode override and system default
                     if themeManager.getThemeOverrideTheme() == nil {
@@ -35,7 +35,13 @@ struct ContentView: View {
                 .padding(.bottom, 20)
             }
         }
-        .onChange(of: colorScheme) { _ in
+        .onAppear {
+            // Ensure theme is updated on initial appearance
+            if themeManager.getThemeOverrideTheme() == nil {
+                themeManager.updateTheme()
+            }
+        }
+        .onChange(of: colorScheme) {
             // Update theme when system color scheme changes, if no override
             if themeManager.getThemeOverrideTheme() == nil {
                 themeManager.updateTheme()

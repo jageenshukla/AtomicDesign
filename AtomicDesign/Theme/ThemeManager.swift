@@ -18,7 +18,9 @@ class ThemeManager: ObservableObject {
     let lightTheme = Theme(
         colors: Theme.Colors(
             background: .white,
-            text: .black
+            text: .black,
+            buttonBackground: .blue,
+            loginButtonBackground: .green
         ),
         fonts: standardFonts
     )
@@ -26,7 +28,9 @@ class ThemeManager: ObservableObject {
     let darkTheme = Theme(
         colors: Theme.Colors(
             background: .black,
-            text: .white
+            text: .white,
+            buttonBackground: .green,
+            loginButtonBackground: .blue
         ),
         fonts: standardFonts
     )

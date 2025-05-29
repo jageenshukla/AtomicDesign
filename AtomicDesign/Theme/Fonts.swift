@@ -11,11 +11,13 @@ struct Fonts {
     let title: Font
     let body: Font
     let footnote: Font
+    let header: Font
 }
 
 // Shared font styles for most themes
 let standardFonts = Fonts(
     title: .system(size: 24, weight: .bold),
     body: .system(size: 16),
-    footnote: .system(size: 12)
+    footnote: .system(size: 12),
+    header: .system(size: 32, weight: .bold)
 )
