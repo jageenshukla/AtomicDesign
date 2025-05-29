@@ -19,6 +19,7 @@ struct Theme {
     struct ComponentColors {
         let loginButton: LoginButtonColors
         let navigationBar: Color
+        let navigationBarText: Color
         let tabBar: Color
         let cardBackground: Color
     }

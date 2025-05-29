@@ -26,12 +26,19 @@ struct SongListView: View {
             }
             .background(themeManager.currentTheme.colors.background.ignoresSafeArea())
             .navigationTitle("Songs")
+            .background(
+                DynamicNavigationBar(
+                    backgroundColor: UIColor(themeManager.currentTheme.colors.components.navigationBar),
+                    titleColor: UIColor(themeManager.currentTheme.colors.components.navigationBarText)
+                )
+            )
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
                         // Hamburger menu action
                     }) {
                         Image(systemName: "line.horizontal.3")
+                            .foregroundColor(themeManager.currentTheme.colors.components.navigationBarText) // Match theme text color
                     }
                 }
             }

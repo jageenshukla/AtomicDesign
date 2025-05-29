@@ -17,18 +17,19 @@ class ThemeManager: ObservableObject {
     // Predefined themes
     let lightTheme = Theme(
         colors: Theme.Colors(
-            background: .white,
-            text: .black,
-            primary: .blue,
-            secondary: .gray,
+            background: Color(.systemBackground),
+            text: Color(.label),
+            primary: Color(.systemBlue),
+            secondary: Color(.systemGray),
             components: Theme.ComponentColors(
                 loginButton: Theme.LoginButtonColors(
-                    background: .green,
-                    text: .white
+                    background: Color(.systemBlue),
+                    text: Color(.white)
                 ),
-                navigationBar: .blue,
-                tabBar: .white,
-                cardBackground: .gray
+                navigationBar: Color(.systemBlue),
+                navigationBarText: Color(.white),
+                tabBar: Color(.systemGray6),
+                cardBackground: Color(.secondarySystemBackground)
             )
         ),
         fonts: standardFonts
@@ -38,14 +39,15 @@ class ThemeManager: ObservableObject {
         colors: Theme.Colors(
             background: .black,
             text: .white,
-            primary: .gray,
+            primary: .yellow, // Use yellow for primary elements
             secondary: .gray,
             components: Theme.ComponentColors(
                 loginButton: Theme.LoginButtonColors(
-                    background: .blue,
-                    text: .white
+                    background: .yellow, // Yellow for login button background
+                    text: .black // Black text for contrast
                 ),
-                navigationBar: .gray,
+                navigationBar: .yellow, // Yellow navigation bar
+                navigationBarText: .black, // Black text for contrast
                 tabBar: .black,
                 cardBackground: .gray
             )
