@@ -20,7 +20,7 @@ struct LoginButton: View {
                 .foregroundColor(.white)
                 .padding()  
                 .frame(maxWidth: .infinity)
-                .background(themeManager.currentTheme.colors.buttonBackground)
+                .background(themeManager.currentTheme.colors.components.loginButton.background)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
         }
     }

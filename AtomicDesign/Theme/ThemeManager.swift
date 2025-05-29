@@ -19,18 +19,36 @@ class ThemeManager: ObservableObject {
         colors: Theme.Colors(
             background: .white,
             text: .black,
-            buttonBackground: .blue,
-            loginButtonBackground: .green
+            primary: .blue,
+            secondary: .gray,
+            components: Theme.ComponentColors(
+                loginButton: Theme.LoginButtonColors(
+                    background: .green,
+                    text: .white
+                ),
+                navigationBar: .blue,
+                tabBar: .white,
+                cardBackground: .gray
+            )
         ),
         fonts: standardFonts
     )
-    
+
     let darkTheme = Theme(
         colors: Theme.Colors(
             background: .black,
             text: .white,
-            buttonBackground: .green,
-            loginButtonBackground: .blue
+            primary: .gray,
+            secondary: .gray,
+            components: Theme.ComponentColors(
+                loginButton: Theme.LoginButtonColors(
+                    background: .blue,
+                    text: .white
+                ),
+                navigationBar: .gray,
+                tabBar: .black,
+                cardBackground: .gray
+            )
         ),
         fonts: standardFonts
     )
