@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct AtomicDesignApp: App {
+    let themeManager = ThemeManager.shared
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(themeManager)
         }
     }
 }
