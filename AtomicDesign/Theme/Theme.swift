@@ -31,4 +31,13 @@ struct Theme {
 
     let colors: Colors
     let fonts: Fonts
+
+    func isSame(as other: Theme) -> Bool {
+        return self.colors.background.description == other.colors.background.description &&
+               self.colors.text.description == other.colors.text.description &&
+               self.colors.primary.description == other.colors.primary.description &&
+               self.colors.secondary.description == other.colors.secondary.description &&
+               self.colors.components.navigationBar.description == other.colors.components.navigationBar.description &&
+               self.colors.components.navigationBarText.description == other.colors.components.navigationBarText.description
+    }
 }
