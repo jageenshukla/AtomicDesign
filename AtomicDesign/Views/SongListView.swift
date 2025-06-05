@@ -54,11 +54,8 @@ struct SongListView: View {
                 .environmentObject(themeManager)
         }
         .overlay(
-            DynamicNavigationBar(
-                backgroundColor: UIColor(themeManager.currentTheme.colors.components.navigationBar),
-                titleColor: UIColor(themeManager.currentTheme.colors.components.navigationBarText)
-            )
-            .allowsHitTesting(false) // Ensure it does not block touch interactions
+            DynamicNavigationBar(theme: $themeManager.currentTheme) // Pass theme as a binding
+                .allowsHitTesting(false) // Ensure it does not block touch interactions
         )
     }
 }

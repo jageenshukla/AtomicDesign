@@ -1,8 +1,13 @@
 import SwiftUI
 
 struct DynamicNavigationBar: UIViewControllerRepresentable {
-    var backgroundColor: UIColor
-    var titleColor: UIColor
+    @Binding var theme: Theme // Observe theme changes
+    var backgroundColor: UIColor {
+        UIColor(theme.colors.components.navigationBar)
+    }
+    var titleColor: UIColor {
+        UIColor(theme.colors.components.navigationBarText)
+    }
 
     func makeUIViewController(context: Context) -> UIViewController {
         let viewController = UIViewController()

@@ -9,7 +9,7 @@ struct SongCellImage: View {
             .font(.title)
             .foregroundColor(.white)
             .frame(width: 50, height: 50)
-            .background(themeManager.currentTheme.colors.primary)
+            .background(themeManager.currentTheme.colors.primary) // Dynamically update background color
             .clipShape(Circle())
     }
 }
