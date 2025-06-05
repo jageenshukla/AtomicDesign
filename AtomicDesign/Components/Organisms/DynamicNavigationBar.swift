@@ -6,6 +6,7 @@ struct DynamicNavigationBar: UIViewControllerRepresentable {
 
     func makeUIViewController(context: Context) -> UIViewController {
         let viewController = UIViewController()
+        viewController.view.backgroundColor = .clear // Ensure the view is transparent
         updateNavigationBarAppearance(for: viewController)
         return viewController
     }
