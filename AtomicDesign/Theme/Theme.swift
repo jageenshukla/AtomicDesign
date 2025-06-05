@@ -22,6 +22,7 @@ struct Theme {
         let navigationBarText: Color
         let tabBar: Color
         let cardBackground: Color
+        let textFieldBorder: Color // Add border color for text fields
     }
 
     struct LoginButtonColors {

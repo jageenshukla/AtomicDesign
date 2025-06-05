@@ -1,8 +1,13 @@
 import SwiftUI
 
+protocol SlidingMenuDelegate: AnyObject {
+    func didRequestLogout()
+}
+
 struct SlidingMenu: View {
     @Binding var isOpen: Bool
     @EnvironmentObject var themeManager: ThemeManager
+    weak var delegate: SlidingMenuDelegate? // Ensure delegate is passed
 
     var body: some View {
         ZStack(alignment: .leading) {
@@ -29,9 +34,13 @@ struct SlidingMenu: View {
                     .foregroundColor(themeManager.currentTheme.colors.text)
 
                     Button(action: {
-                        // Navigate to favorite songs
+                        withAnimation {
+                            isOpen = false
+                        }
+                        // Notify delegate for logout
+                        delegate?.didRequestLogout()
                     }) {
-                        Text("Favorite Songs")
+                        Text("Logout")
                             .foregroundColor(themeManager.currentTheme.colors.text)
                             .padding()
                     }

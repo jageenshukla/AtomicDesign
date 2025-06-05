@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var themeManager: ThemeManager
+    @EnvironmentObject var navigationManager: NavigationManager // Add navigation manager
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
@@ -16,8 +17,13 @@ struct ContentView: View {
             themeManager.currentTheme.colors.background
                 .ignoresSafeArea()
 
-            VStack {
+            switch navigationManager.currentView {
+            case .login:
                 LoginForm()
+            case .songList:
+                SongListView()
+            case .favoriteSongs:
+                FavoriteSongsView() // Updated to include navigation bar
             }
         }
         .onAppear {
@@ -32,6 +38,18 @@ struct ContentView: View {
                 themeManager.updateTheme()
             }
         }
+    }
+}
+
+class ContentViewDelegate: SlidingMenuDelegate {
+    private let navigationManager: NavigationManager
+
+    init(navigationManager: NavigationManager) {
+        self.navigationManager = navigationManager
+    }
+
+    func didRequestLogout() {
+        navigationManager.currentView = .login
     }
 }
 

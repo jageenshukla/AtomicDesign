@@ -29,7 +29,8 @@ class ThemeManager: ObservableObject {
                 navigationBar: Color(.systemBlue),
                 navigationBarText: Color(.white),
                 tabBar: Color(.systemGray6),
-                cardBackground: Color(.secondarySystemBackground)
+                cardBackground: Color(.secondarySystemBackground),
+                textFieldBorder: Color(.systemGray4) // Add border color for text fields
             )
         ),
         fonts: standardFonts
@@ -37,19 +38,20 @@ class ThemeManager: ObservableObject {
 
     let darkTheme = Theme(
         colors: Theme.Colors(
-            background: .black,
-            text: .white,
-            primary: .yellow, // Use yellow for primary elements
-            secondary: .gray,
+            background: Color(.black),
+            text: Color(.white),
+            primary: Color(.yellow),
+            secondary: Color(.gray),
             components: Theme.ComponentColors(
                 loginButton: Theme.LoginButtonColors(
-                    background: .yellow, // Yellow for login button background
-                    text: .black // Black text for contrast
+                    background: Color(.yellow),
+                    text: Color(.black)
                 ),
-                navigationBar: .yellow, // Yellow navigation bar
-                navigationBarText: .black, // Black text for contrast
-                tabBar: .black,
-                cardBackground: .gray
+                navigationBar: Color(.yellow),
+                navigationBarText: Color(.black),
+                tabBar: Color(.black),
+                cardBackground: Color(.gray),
+                textFieldBorder: Color(.yellow) // Add border color for text fields
             )
         ),
         fonts: standardFonts
