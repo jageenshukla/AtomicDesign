@@ -18,7 +18,7 @@ struct ThemedTextField: View {
             if isSecure {
                 SecureField(placeholder, text: $text)
                     .padding(8)
-                    .background(themeManager.currentTheme.colors.background)
+                    .background(themeManager.currentTheme.colors.components.textFieldBackground) // Use theme-specific background color
                     .cornerRadius(8)
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
@@ -29,7 +29,7 @@ struct ThemedTextField: View {
             } else {
                 TextField(placeholder, text: $text)
                     .padding(8)
-                    .background(themeManager.currentTheme.colors.background)
+                    .background(themeManager.currentTheme.colors.components.textFieldBackground) // Use theme-specific background color
                     .cornerRadius(8)
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)

@@ -1,6 +1,7 @@
 import Foundation
 
-struct Song {
+struct Song: Identifiable {
+    let id = UUID() // Add unique identifier
     let name: String
     let artist: String
 }

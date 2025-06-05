@@ -30,7 +30,9 @@ class ThemeManager: ObservableObject {
                 navigationBarText: Color(.white),
                 tabBar: Color(.systemGray6),
                 cardBackground: Color(.secondarySystemBackground),
-                textFieldBorder: Color(.systemGray4) // Add border color for text fields
+                textFieldBorder: Color(.systemGray4), // Add border color for text fields
+                textFieldBackground: Color(.white), // Light theme text field background
+                favoriteIcon: Color(.systemBlue) // Light theme favorite icon color
             )
         ),
         fonts: standardFonts
@@ -51,7 +53,9 @@ class ThemeManager: ObservableObject {
                 navigationBarText: Color(.black),
                 tabBar: Color(.black),
                 cardBackground: Color(.gray),
-                textFieldBorder: Color(.yellow) // Add border color for text fields
+                textFieldBorder: Color(.yellow), // Add border color for text fields
+                textFieldBackground: Color(.darkGray), // Dark theme text field background
+                favoriteIcon: Color(.orange) // Dark theme favorite icon color
             )
         ),
         fonts: standardFonts

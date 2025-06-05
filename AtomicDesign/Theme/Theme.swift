@@ -23,6 +23,8 @@ struct Theme {
         let tabBar: Color
         let cardBackground: Color
         let textFieldBorder: Color // Add border color for text fields
+        let textFieldBackground: Color // Add background color for text fields
+        let favoriteIcon: Color // Add color for favorite icon
     }
 
     struct LoginButtonColors {

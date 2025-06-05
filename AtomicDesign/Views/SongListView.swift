@@ -4,6 +4,7 @@ struct SongListView: View {
     @EnvironmentObject var themeManager: ThemeManager
     @State private var searchText = ""
     @State private var isMenuOpen = false // State to manage menu visibility
+    @State private var favoriteSongs = Set<UUID>() // Track favorite songs
 
     var filteredSongs: [Song] {
         if searchText.isEmpty {
@@ -41,8 +42,8 @@ struct SongListView: View {
                     .environmentObject(themeManager)
                     .padding(.top, 8) // Add margin at the top of the search bar
 
-                List(filteredSongs, id: \ .name) { song in
-                    SongCell(song: song)
+                List(filteredSongs, id: \ .id) { song in
+                    SongCell(favoriteSongs: $favoriteSongs, song: song)
                         .environmentObject(themeManager)
                         .listRowBackground(themeManager.currentTheme.colors.background) // Dynamically set row background color
                 }
