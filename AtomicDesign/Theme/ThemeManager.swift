@@ -13,7 +13,7 @@ class ThemeManager: ObservableObject {
     
     // Published property to notify SwiftUI views of theme changes
     @Published var currentTheme: Theme
-    
+
     // Predefined themes
     let lightTheme = Theme(
         colors: Theme.Colors(
@@ -82,4 +82,8 @@ class ThemeManager: ObservableObject {
             currentTheme = style == .dark ? darkTheme : lightTheme
         }
     }
+}
+
+extension Notification.Name {
+    static let themeDidChange = Notification.Name("themeDidChange")
 }

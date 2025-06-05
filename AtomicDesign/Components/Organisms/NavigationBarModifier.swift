@@ -10,6 +10,7 @@ struct NavigationBarModifier: ViewModifier {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = backgroundColor
+
         appearance.titleTextAttributes = [.foregroundColor: titleColor ?? .black]
         appearance.largeTitleTextAttributes = [.foregroundColor: titleColor ?? .black]
 

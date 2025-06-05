@@ -29,6 +29,8 @@ struct SlidingMenu: View {
                         Spacer()
                     }
 
+                    Spacer().frame(height: 50) // Add padding to avoid hiding behind the notch
+
                     Toggle("Toggle Theme", isOn: Binding(
                         get: { themeManager.currentTheme.isSame(as: themeManager.darkTheme) },
                         set: { isDark in
@@ -48,7 +50,7 @@ struct SlidingMenu: View {
 
                     Spacer()
                 }
-                .frame(width: UIScreen.main.bounds.width * 0.4)
+                .frame(width: UIScreen.main.bounds.width * 0.5)
                 .background(themeManager.currentTheme.colors.background)
                 .ignoresSafeArea()
             }
