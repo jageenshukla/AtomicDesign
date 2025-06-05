@@ -23,7 +23,7 @@ struct SongListView: View {
                                 isMenuOpen.toggle()
                             }
                         }) {
-                            Image(systemName: isMenuOpen ? "xmark" : "line.horizontal.3")
+                            Image(systemName: "line.horizontal.3")
                                 .foregroundColor(themeManager.currentTheme.colors.components.navigationBarText) // Match theme text color
                                 .padding()
                         }

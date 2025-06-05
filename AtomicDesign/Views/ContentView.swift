@@ -18,21 +18,6 @@ struct ContentView: View {
 
             VStack {
                 LoginForm()
-
-                Button(action: {
-                    // Toggle between dark mode override and system default
-                    if themeManager.getThemeOverrideTheme() == nil {
-                        themeManager.setOverrideTheme(themeManager.darkTheme)
-                    } else {
-                        themeManager.setOverrideTheme(nil)
-                    }
-                }) {
-                    Text("Toggle Dark Mode")
-                        .font(themeManager.currentTheme.fonts.body)
-                        .foregroundColor(themeManager.currentTheme.colors.text)
-                        .padding()
-                }
-                .padding(.bottom, 20)
             }
         }
         .onAppear {

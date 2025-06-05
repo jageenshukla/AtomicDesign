@@ -16,18 +16,6 @@ struct SlidingMenu: View {
                     }
 
                 VStack(alignment: .leading, spacing: 20) {
-                    HStack {
-                        Button(action: {
-                            withAnimation {
-                                isOpen = false
-                            }
-                        }) {
-                            Image(systemName: "xmark")
-                                .foregroundColor(themeManager.currentTheme.colors.text)
-                                .padding()
-                        }
-                        Spacer()
-                    }
 
                     Spacer().frame(height: 50) // Add padding to avoid hiding behind the notch
 
