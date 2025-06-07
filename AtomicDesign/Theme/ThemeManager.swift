@@ -78,7 +78,7 @@ class ThemeManager: ObservableObject {
                 cardBackground: Color(.systemTeal).opacity(0.8),
                 textFieldBorder: Color(.systemIndigo),
                 textFieldBackground: Color(.systemTeal).opacity(0.5),
-                favoriteIcon: Color(.systemPink)
+                favoriteIcon: Color(.systemIndigo)
             )
         ),
         fonts: standardFonts
