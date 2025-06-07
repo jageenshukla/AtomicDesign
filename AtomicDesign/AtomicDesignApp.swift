@@ -10,11 +10,13 @@ import SwiftUI
 @main
 struct AtomicDesignApp: App {
     let themeManager = ThemeManager.shared
+    let navigationManager = NavigationManager() // Add navigation manager
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(themeManager)
+                .environmentObject(navigationManager) // Provide navigation manager to environment
         }
     }
 }

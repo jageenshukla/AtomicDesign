@@ -12,21 +12,31 @@ struct ThemedTextField: View {
     let placeholder: String
     @Binding var text: String
     var isSecure: Bool = false
-    
+
     var body: some View {
         Group {
             if isSecure {
                 SecureField(placeholder, text: $text)
-                    .textFieldStyle(.roundedBorder)
+                    .padding(8)
+                    .background(themeManager.currentTheme.colors.components.textFieldBackground) // Use theme-specific background color
+                    .cornerRadius(8)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(themeManager.currentTheme.colors.components.textFieldBorder, lineWidth: 1) // Add border
+                    )
                     .font(themeManager.currentTheme.fonts.body)
                     .foregroundColor(themeManager.currentTheme.colors.text)
-                    .background(themeManager.currentTheme.colors.background)
             } else {
                 TextField(placeholder, text: $text)
-                    .textFieldStyle(.roundedBorder)
+                    .padding(8)
+                    .background(themeManager.currentTheme.colors.components.textFieldBackground) // Use theme-specific background color
+                    .cornerRadius(8)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(themeManager.currentTheme.colors.components.textFieldBorder, lineWidth: 1) // Add border
+                    )
                     .font(themeManager.currentTheme.fonts.body)
                     .foregroundColor(themeManager.currentTheme.colors.text)
-                    .background(themeManager.currentTheme.colors.background)
             }
         }
     }
