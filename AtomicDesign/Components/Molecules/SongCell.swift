@@ -28,7 +28,8 @@ struct SongCell: View {
                 }
             }) {
                 Image(systemName: isFavorite ? "heart.fill" : "heart")
-                    .foregroundColor(isFavorite ? themeManager.currentTheme.colors.components.favoriteIcon : .gray) // Use theme-specific color for favorite icon
+                    .foregroundColor(themeManager.currentTheme.colors.components.favoriteIcon)
+                    .tint(themeManager.currentTheme.colors.components.favoriteIcon)
             }
         }
         .padding()

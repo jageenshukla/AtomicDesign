@@ -24,10 +24,11 @@ struct SlidingMenu: View {
 
                     Spacer().frame(height: 50) // Add padding to avoid hiding behind the notch
 
-                    Toggle("Toggle Theme", isOn: Binding(
-                        get: { themeManager.currentTheme.isSame(as: themeManager.darkTheme) },
-                        set: { isDark in
-                            themeManager.setOverrideTheme(isDark ? themeManager.darkTheme : themeManager.lightTheme)
+                    Toggle("Enable Custom Theme", isOn: Binding(
+                        get: { themeManager.isCustomThemeEnabled },
+                        set: { isEnabled in
+                            themeManager.isCustomThemeEnabled = isEnabled
+                            themeManager.setOverrideTheme(isEnabled ? themeManager.customTheme : nil)
                         }
                     ))
                     .padding()

@@ -61,8 +61,34 @@ class ThemeManager: ObservableObject {
         fonts: standardFonts
     )
     
+    let customTheme = Theme(
+        colors: Theme.Colors(
+            background: Color(.systemTeal),
+            text: Color(.white),
+            primary: Color(.systemIndigo),
+            secondary: Color(.systemPink),
+            components: Theme.ComponentColors(
+                loginButton: Theme.LoginButtonColors(
+                    background: Color(.systemIndigo),
+                    text: Color(.white)
+                ),
+                navigationBar: Color(.systemTeal),
+                navigationBarText: Color(.white),
+                tabBar: Color(.systemTeal),
+                cardBackground: Color(.systemTeal).opacity(0.8),
+                textFieldBorder: Color(.systemIndigo),
+                textFieldBackground: Color(.systemTeal).opacity(0.5),
+                favoriteIcon: Color(.systemPink)
+            )
+        ),
+        fonts: standardFonts
+    )
+
     // Property to override the theme (nil means follow iOS system)
     private var overrideTheme: Theme?
+    
+    // Add a flag to track custom theme usage
+    @Published var isCustomThemeEnabled: Bool = false
     
     private init() {
         // Initialize with system theme
@@ -81,7 +107,9 @@ class ThemeManager: ObservableObject {
     }
     // Update the current theme based on override or system settings
     func updateTheme() {
-        if let overrideTheme = overrideTheme {
+        if isCustomThemeEnabled {
+            currentTheme = customTheme
+        } else if let overrideTheme = overrideTheme {
             currentTheme = overrideTheme
         } else {
             let style = UITraitCollection.current.userInterfaceStyle
