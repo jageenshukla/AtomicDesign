@@ -3,7 +3,7 @@
 This project is an iOS application built using the **Atomic Design** methodology. It is written in Swift and leverages SwiftUI for building user interfaces. The application is structured into Atoms, Molecules, and Organisms, following the principles of Atomic Design.
 
 ## What is Atomic Design?
-Atomic Design is a methodology for creating design systems. It breaks down UI components into five distinct levels: Atoms, Molecules, Organisms, Templates, and Pages. For more details, refer to [this blog post](#).
+Atomic Design is a methodology for creating design systems by breaking down UI components into five distinct levels: Atoms, Molecules, Organisms, Templates, and Pages. To learn more about the origins and evolution of Atomic Design, check out [this blog post](https://medium.com/@jageenshukla/atomic-design-variants-origins-evolution-and-ios-implementation-e66df41ea637). For a detailed explanation of how this methodology is implemented in this project, read [this blog post](https://medium.com/@jageenshukla/revolutionize-your-ios-development-with-atomic-design-and-swiftui-eccda25808f8).
 
 ## Project Structure
 
